@@ -14,7 +14,6 @@
       <p>{{scheda.descrizione}}</p>
       <div class="w-full flex mt-10 justify-between">
         <span class="text-primary font-bold ">{{scheda.dataCreazione | date :'dd/MM/YY'}}</span>
-        <!--da aggiungere il param id per aprire scheda relativa-->
         <button class="btn btn-primary" [routerLink]="['/dettaglio-scheda', scheda.id]">Apri</button>
       </div>
     </div>

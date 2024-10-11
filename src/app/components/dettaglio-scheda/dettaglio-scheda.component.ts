@@ -8,13 +8,9 @@ import { WorkoutPlan, WorkoutPlanService } from 'src/app/service/workout-plan.se
   styleUrls: ['./dettaglio-scheda.component.css']
 })
 export class DettaglioSchedaComponent {
-
-
-
   scheda: WorkoutPlan | undefined;
-
+  
   constructor(private router: ActivatedRoute, private workoutSrv: WorkoutPlanService) { }
-
 
   ngOnInit(): void {
     this.router.params.subscribe((params) => {

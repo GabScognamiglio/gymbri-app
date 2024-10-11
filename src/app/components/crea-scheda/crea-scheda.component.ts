@@ -81,7 +81,7 @@ export class CreaSchedaComponent {
       this.workoutPlan = {
         nome: form.value.nome,
         descrizione: form.value.descrizione,
-        dataCreazione: new Date().toISOString(), // Aggiungi la data di creazione
+        dataCreazione: new Date().toISOString(),
         session1: {
           nome: form.value.session1Nome,
           esercizi: this.session1Exercises.map(ex => ({

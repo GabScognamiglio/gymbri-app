@@ -1,13 +1,6 @@
-// src/app/workout-plan.service.ts
 import { Injectable } from '@angular/core';
 import Dexie from 'dexie';
 import { Esercizio } from '../interface/esercizio';
-
-// export interface Esercizio {
-//   name: string;
-//   quantity: string;
-//   weight: number;
-// }
 
 export interface Session {
   nome: string;
@@ -31,7 +24,7 @@ export class AppDatabase extends Dexie {
   constructor() {
     super('WorkoutPlansDatabase');
     this.version(1).stores({
-      workoutPlans: '++id', // auto-incrementing primary key
+      workoutPlans: '++id',
     });
     this.workoutPlans = this.table('workoutPlans');
   }
@@ -51,8 +44,6 @@ export class WorkoutPlanService {
   async initializeDatabase() {
     const workoutPlans: WorkoutPlan[] = [
     ];
-
-    // Salva i workout plans nel database
     await this.db.workoutPlans.bulkPut(workoutPlans);
   }
 

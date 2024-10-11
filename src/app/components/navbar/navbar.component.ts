@@ -13,11 +13,7 @@ export class NavbarComponent {
 
   constructor(private router: Router, private themeService: ThemeService) {}
 
-  ngOnInit(): void {}
-
-
-  
-  toggleTheme() {
+ toggleTheme() {
     this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.currentTheme);
     this.themeService.setTheme(this.currentTheme);
@@ -29,5 +25,4 @@ export class NavbarComponent {
       drawerToggle.checked = false;
     }
   }
-
 }
