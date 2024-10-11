@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'it.gab.gymbri',
-  appName: 'gymbri-app',
+  appName: 'Gymbri App',
   webDir: 'dist'
 };
 
