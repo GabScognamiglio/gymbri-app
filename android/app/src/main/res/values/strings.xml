@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Gymbri App</string>
+    <string name="title_activity_main">gymbri-app</string>
+    <string name="package_name">it.gab.gymbri</string>
+    <string name="custom_url_scheme">it.gab.gymbri</string>
+</resources>
