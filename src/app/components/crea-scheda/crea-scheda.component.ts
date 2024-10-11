@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Esercizio } from 'src/app/interface/esercizio';
-import { WorkoutPlanService } from 'src/app/service/workout-plan.service';
+import { WorkoutPlan, WorkoutPlanService } from 'src/app/service/workout-plan.service';
 
 @Component({
   selector: 'app-crea-scheda',
@@ -10,15 +10,7 @@ import { WorkoutPlanService } from 'src/app/service/workout-plan.service';
   styleUrls: ['./crea-scheda.component.css']
 })
 export class CreaSchedaComponent {
-  workoutPlan = {
-    nome: '',
-    descrizione: '',
-    dataCreazione: '',
-    session1: { nome: '', esercizi: [] as Esercizio[] },
-    session2: { nome: '', esercizi: [] as Esercizio[] },
-    session3: { nome: '', esercizi: [] as Esercizio[] },
-    session4: { nome: '', esercizi: [] as Esercizio[] }
-  };
+  workoutPlan!:WorkoutPlan
 
   constructor(private workoutSrv: WorkoutPlanService, private router:Router) { }
 
@@ -112,7 +104,6 @@ export class CreaSchedaComponent {
         }
       };
       this.workoutSrv.addWorkoutPlan(this.workoutPlan)
-      console.log(this.workoutPlan);
       form.reset();
 
       const alertElement = document.getElementById('confirmation-alert');

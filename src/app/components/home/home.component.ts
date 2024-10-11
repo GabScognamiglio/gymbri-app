@@ -16,8 +16,6 @@ export class HomeComponent {
 
   async loadWorkoutPlans() {
     this.workoutPlans = await this.workoutPlanService.getWorkoutPlans();
-    (console.log(this.workoutPlans));
-    console.log("caricando le schede...")
   }
 
   eliminaScheda(id: number | any) {
