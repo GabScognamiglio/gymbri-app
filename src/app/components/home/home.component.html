@@ -1,0 +1,41 @@
+<div class="pb-24 pt-1" *ngIf="workoutPlans.length>0">
+  <div *ngFor="let scheda of workoutPlans" class="card bg-base-300 text-neutral-content my-10 relative"
+    style="max-width: 500px; margin: 30px auto;">
+    <div class="dropdown dropdown-end absolute" style="top: 15px; right: 15px;">
+      <a tabindex="0" role="button" class="btn bg-base-300 border-none"><span class="material-symbols-outlined">
+          more_vert
+        </span></a>
+      <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow">
+        <li><a class="text-error font-bold" (click)="eliminaScheda(scheda.id)">Elimina</a></li>
+      </ul>
+    </div>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">{{scheda.nome}}</h2>
+      <p>{{scheda.descrizione}}</p>
+      <div class="w-full flex mt-10 justify-between">
+        <span class="text-primary font-bold ">{{scheda.dataCreazione | date :'dd/MM/YY'}}</span>
+        <!--da aggiungere il param id per aprire scheda relativa-->
+        <button class="btn btn-primary" [routerLink]="['/dettaglio-scheda', scheda.id]">Apri</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="italic py-10 text-center" *ngIf="workoutPlans.length==0">Non ci sono ancora schede</div>
+
+<!--FLOATING BUTTON-->
+<button class="btn-lg btn-circle fixed bg-secondary text-black shadow" style="bottom: 30px; right: 30px;"
+  [routerLink]="['/crea-scheda']">
+  <i class="fa-solid fa-plus"></i>
+</button>
+
+
+<!--ALERT ELIMINAZIONE-->
+<div id="confirmation-alert" role="alert"
+  class="alert alert-success fixed bottom-0 right-0 rounded-none rounded-t-xl h-20 slide-in-bottom justify-center text-lg hidden">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>Scheda eliminata con successo</span>
+</div>

@@ -1,0 +1,34 @@
+<div class="p-4 max-w-md mx-auto" *ngIf="scheda">
+  <div class="shadow-lg rounded-lg overflow-hidden bg-base-200">
+    <div class="p-4">
+      <h2 class="text-2xl font-bold mb-2">{{ scheda.nome }}</h2>
+      <p class="text-sm text-gray-600 mb-4">Descrizione: {{ scheda.descrizione }}</p>
+      <p class="text-sm text-gray-600 mb-4">
+        Data Creazione: {{ scheda.dataCreazione | date: 'dd MMMM yyyy' }}
+      </p>
+
+      <div *ngFor="let session of getSessions(scheda), let i = index" class="mb-8">
+        <h3 class="text-lg font-semibold mb-2"> <span class="badge text-primary bg-base-300 p-3">{{i+1}}</span> &nbsp;{{ session.nome }}</h3>
+        <table class="min-w-full border-base">
+          <thead>
+            <tr>
+              <th class="text-left p-2 border-b border-base-300 ">Esercizio</th>
+              <th class="text-left p-2 border-b border-base-300">Serie</th>
+              <th class="text-left p-2 border-b border-base-300">Peso (kg)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let esercizio of session.esercizi">
+              <td class="p-2 border-b border-base-300">{{ esercizio.name }}</td>
+              <td class="p-2 border-b border-base-300">{{ esercizio.quantity }}</td>
+              <td class="p-2 border-b border-base-300">
+                <input type="number" [(ngModel)]="esercizio.weight" (ngModelChange)="onWeightChange()"
+                  class="w-20 p-1 border rounded bg-base-300 border-base-300" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

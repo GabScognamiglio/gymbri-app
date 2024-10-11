@@ -1,1 +1,149 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    transition: all 0.5s;
+}
+
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.gabs {
+    font-size: 40px;
+}
+
+.main-content {
+    margin-top: 122px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.h1 {
+    font-size: 2.5rem;
+}
+
+.h2 {
+    font-size: 2rem;
+}
+
+.h3 {
+    font-size: 1.75rem;
+}
+
+.h4 {
+    font-size: 1.5rem;
+}
+
+.h5 {
+    font-size: 1.25rem;
+}
+
+.h6 {
+    font-size: 1rem;
+}
+
+.blurred {
+    backdrop-filter: blur(20px);
+
+}
+
+.blackened {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+.btn:hover,
+.btn:hover * {
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+.slide-in-bottom {
+    -webkit-animation: slide-in-bottom .5s cubic-bezier(.25, .46, .45, .94) both;
+    animation: slide-in-bottom .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+}

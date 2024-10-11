@@ -1,0 +1,145 @@
+<div class="p-4">
+  <h1 class="text-2xl font-bold">Crea Workout Plan</h1>
+
+  <form (ngSubmit)="creaScheda(workoutForm)" #workoutForm="ngForm" class="space-y-4">
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Nome</span>
+      </label>
+      <input type="text" name="nome" ngModel required class="input input-bordered"
+        placeholder="Nome del workout plan" />
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Descrizione</span>
+      </label>
+      <textarea name="descrizione" ngModel required class="textarea textarea-bordered"
+        placeholder="Descrizione del workout plan"></textarea>
+    </div>
+
+    <div class="space-y-2">
+      <!-- Sessione 1 -->
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="accordion" />
+        <div class="collapse-title text-lg font-medium">Sessione 1</div>
+        <div class="collapse-content overflow-auto">
+          <div class="form-control">
+            <label class="label">
+              <h3 class="text-primary font-bold my-2">Nome Sessione</h3>
+            </label>
+            <input type="text" name="session1Nome" ngModel class="input input-bordered"
+              placeholder="Nome della sessione 1" />
+          </div>
+
+          <label class="label">
+            <h3 class="font-bold my-2">Esercizi:</h3>
+          </label>
+          <div *ngFor="let exercise of session1Exercises; let i = index" class="flex flex-col mb-5">
+            <input type="text" [(ngModel)]="exercise.quantity" name="session1ExerciseQuantity{{i}}"
+              placeholder="Quantità" class="input input-bordered my-2" />
+            <input type="text" [(ngModel)]="exercise.name" name="session1ExerciseName{{i}}" placeholder="Nome Esercizio"
+              class="input input-bordered" />
+            <button (click)="removeExercise(1, i)" class="btn btn-error my-2">Rimuovi</button>
+          </div>
+          <button type="button" (click)="addExercise(1)" class="btn btn-primary mt-2">Aggiungi Esercizio</button>
+        </div>
+      </div>
+
+      <!-- Sessione 2 -->
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="accordion" />
+        <div class="collapse-title text-lg font-medium">Sessione 2</div>
+        <div class="collapse-content overflow-auto">
+          <div class="form-control">
+            <label class="label">
+              <h3 class="text-primary font-bold my-2">Nome Sessione</h3>
+            </label>
+            <input type="text" name="session2Nome" ngModel class="input input-bordered"
+              placeholder="Nome della sessione 2" />
+          </div>
+
+          <label class="label">
+            <h3 class="font-bold my-2">Esercizi:</h3>
+          </label>
+          <div *ngFor="let exercise of session2Exercises; let i = index" class="flex flex-col mb-5">
+            <input type="text" [(ngModel)]="exercise.quantity" name="session2ExerciseQuantity{{i}}"
+              placeholder="Quantità" class="input input-bordered my-2" />
+            <input type="text" [(ngModel)]="exercise.name" name="session2ExerciseName{{i}}" placeholder="Nome Esercizio"
+              class="input input-bordered" />
+            <button (click)="removeExercise(2, i)" class="btn btn-error my-2">Rimuovi</button>
+          </div>
+          <button type="button" (click)="addExercise(2)" class="btn btn-primary mt-2">Aggiungi Esercizio</button>
+        </div>
+      </div>
+
+      <!-- Sessione 3 -->
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="accordion" />
+        <div class="collapse-title text-lg font-medium">Sessione 3</div>
+        <div class="collapse-content overflow-auto">
+          <div class="form-control">
+            <label class="label">
+              <h3 class="text-primary font-bold my-2">Nome Sessione</h3>
+            </label>
+            <input type="text" name="session3Nome" ngModel class="input input-bordered"
+              placeholder="Nome della sessione 3" />
+          </div>
+
+          <label class="label">
+            <h3 class="font-bold my-2">Esercizi:</h3>
+          </label>
+          <div *ngFor="let exercise of session3Exercises; let i = index" class="flex flex-col mb-5">
+            <input type="text" [(ngModel)]="exercise.quantity" name="session3ExerciseQuantity{{i}}"
+              placeholder="Quantità" class="input input-bordered my-2" />
+            <input type="text" [(ngModel)]="exercise.name" name="session3ExerciseName{{i}}" placeholder="Nome Esercizio"
+              class="input input-bordered" />
+            <button (click)="removeExercise(3, i)" class="btn btn-error my-2">Rimuovi</button>
+          </div>
+          <button type="button" (click)="addExercise(3)" class="btn btn-primary mt-2">Aggiungi Esercizio</button>
+        </div>
+      </div>
+
+      <!-- Sessione 4 -->
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="accordion" />
+        <div class="collapse-title text-lg font-medium">Sessione 4</div>
+        <div class="collapse-content overflow-auto">
+          <div class="form-control">
+            <label class="label">
+              <h3 class="text-primary font-bold my-2">Nome Sessione</h3>
+            </label>
+            <input type="text" name="session4Nome" ngModel class="input input-bordered"
+              placeholder="Nome della sessione 4" />
+          </div>
+
+          <label class="label">
+            <h3 class="font-bold my-2">Esercizi:</h3>
+          </label>
+          <div *ngFor="let exercise of session4Exercises; let i = index" class="flex flex-col mb-5">
+            <input type="text" [(ngModel)]="exercise.quantity" name="session4ExerciseQuantity{{i}}"
+              placeholder="Quantità" class="input input-bordered my-2" />
+            <input type="text" [(ngModel)]="exercise.name" name="session4ExerciseName{{i}}" placeholder="Nome Esercizio"
+              class="input input-bordered" />
+            <button (click)="removeExercise(4, i)" class="btn btn-error my-2">Rimuovi</button>
+          </div>
+          <button type="button" (click)="addExercise(4)" class="btn btn-primary mt-2">Aggiungi Esercizio</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-success mt-4 font-bold" [disabled]="workoutForm.invalid">Crea Scheda</button>
+    </div>
+  </form>
+
+  <!--ALERT CREAZIONE-->
+  <div id="confirmation-alert" role="alert"
+    class="alert alert-success fixed bottom-0 right-0 rounded-none rounded-t-xl h-20 slide-in-bottom justify-center text-lg hidden">
+    <span class="material-symbols-outlined font-bold">
+      check
+    </span>
+    <span class="font-bold">Nuova scheda creata con successo!</span>
+  </div>
+
+</div>
